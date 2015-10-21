@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  hr
+  form(method='post')
+    fieldset
+        legend Set puzzles
+        select(name='multiple')
+            each val in [2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+                if select == val
+                    option(selected)= val
+                else
+                    option= val
+        input(type='submit' value='generate')
+        input(type='button' value='print' onClick='javascript:print()')
+    
+    
+  table(border=1)
+    each tr_item in table
+        tr
+            each td_item in tr_item
+                if td_item == 'QR'
+                    td(bgcolor='red')= td_item
+                else
+                    td= td_item
